@@ -1,0 +1,20 @@
+.in {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25%;
+}
+.view {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+input {
+    margin: 3px;
+}
+select {
+    margin: 3px;
+}
+button {
+    margin: 3px;
+}

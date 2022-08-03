@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="view">
+        <div class="in">
+        Расчёт вероятности госпитализации
+        <input id = "age" type="text" placeholder="Возраст пациента">
+        <!-- <input id = "heartDeseases" type="text" placeholder="Заболевания сердечно-сосудистой системы"> -->
+        <select  id="heartDeseases">
+            <option value="">Заболевания сердечно-сосудистой системы</option>
+            <option value="1">Да</option>
+            <option value="2">Нет</option>
+        </select>
+        <!-- да = 1  нет =  0  -->
+        <!-- <input id="endocrineDeceases" type="text" placeholder="Эндокринные заболевания"> -->
+        <select  id="endocrineDeceases">
+            <option value="">Эндокринные заболевания</option>
+            <option value="1">Да</option>
+            <option value="2">Нет</option>
+        </select>
+        <!-- сюда добавить плашку выезжающую либо да либо нет если да - 1 если нет то - 0 -->
+        <!-- <input id="lungDeseases" type="text" placeholder="Заболевания органов дыхания"> -->
+        <select  id="lungDeseases">
+            <option value="">Заболевания органов дыхания</option>
+            <option value="1">Да</option>
+            <option value="2">Нет</option>
+        </select>
+        <!-- тоже да нет -->
+        <!-- <input id="otherDeceases" type="text" placeholder="Другие заболевания"> -->
+        <select id = "otherDeceases">
+            <option value="">Другие заболевания</option>
+            <option value="1">Да</option>
+            <option value="2">Нет</option>
+        </select>
+        <!-- да нет -->
+        <!-- <input id="oncoDeseases" type="text"placeholder = 'Онкологические заболевания'> -->
+        <select  id="oncoDeseases">
+            <option value="">Онкологические заболевания</option>
+            <option value="1">Да</option>
+            <option value="2">Нет</option>
+        </select>
+        <!-- да нет -->
+        <select  id="sex">
+            <option value="">Пол</option>
+            <option value="1">Муж</option>
+            <option value="2">Жен</option>
+        </select>
+        <!-- <input id="sex" type="text" placeholder="Пол"> -->
+        <!-- если мужчина = 1 женщина = 0 -->
+        <select id="hightSeverity">
+            <option value="">Тяжелая степерь тяжести</option>
+            <option value="1">да</option>
+            <option value="2">нет</option>
+        </select>
+        <!-- <input id="hightSeverity" type="text" placeholder="Тяжелая степерь тяжести"> -->
+        <!-- Да = 1 нет = 0  -->
+        <!-- <input id="midleSeveruty" type="text" placeholder="Среднетяжелая степень тяжести"> -->
+        <select  id="midleSeveruty">
+            <option value="">Среднетяжелая степень тяжести</option>
+            <option value="1">Да</option>
+            <option value="2">Нет</option>
+        </select>
+        <!-- ДА = 1 нет = 0 -->
+        <!-- <input id="fever" type="text" placeholder="Повышение температуры тела"> -->
+        <select  id="fever">
+            <option value="">Повышение температуры тела</option>
+            <option value="1">Да</option>
+            <option value="2">Нет</option>
+        </select>
+        <!-- да = 1 нет = 0 -->
+        <!-- <input id="tasteLoss" type="text" placeholder="Потеря вкуса"> -->
+        <select  id="tasteLoss">
+            <option value="">Потеря вкуса</option>
+            <option value="1">Да</option>
+            <option value="2">Нет</option>
+        </select>
+        <!-- да = 1 нет = 0 -->
+        <!-- <input id="rhinitis" type="text" placeholder="Заложенность носа"> -->
+        <select  id="rhinitis">
+            <option value="">Заложенность носа</option>
+            <option value="1">Да</option>
+            <option value="2">Нет</option>
+        </select>
+        <!-- да = 1 нет = 0 -->
+        <!-- <input id="dyspnea" type="text" placeholder="Отдышка"> -->
+        <select  id="dyspnea">
+            <option value="">Отдышка</option>
+            <option value="1">Да</option>
+            <option value="2">Нет</option>
+        </select>
+        <!-- да нет -->
+        <!-- <input id="clinic" type="text" placeholder="Установление диагноза в поликлинике"> -->
+        <select  id="clinic">
+            <option value="">Установление диагноза в поликлинике</option>
+            <option value="1">Да</option>
+            <option value="2">Нет</option>
+        </select>
+        <!-- да нет -->
+        <!-- <input id="hospital" type="text" placeholder="Установление диагноза в стационаре"> -->
+        <select  id="hospital">
+            <option value="NAN">Установление диагноза в стационаре</option>
+            <option value="1">Да</option>
+            <option value="2">Нет</option>
+        </select>
+        <!-- да нет -->
+        <!-- <input id="covContact" type="text" placeholder="Контакт с больным COVID-19"> -->
+        <select  id="covContact">
+            <option value="">Контакт с больным COVID-19</option>
+            <option value="1">Да</option>
+            <option value="2">Нет</option>
+        </select>
+        <div id = "result">
+            <button id="res">Посчитать</button>
+        </div>
+        </div>
+        <div class="in">
+        Расчет риска неблагоприятного исхода (данные пациента при поступлении)
+        <input id = "Xвозраст" type="text" placeholder="Введите возраст пациента (полных лет)">
+        <input id = "XSpO2%" type="text" placeholder="SpO2% при поступлении">
+        <input id="Xэритр" type="text"placeholder="Кол-во Эритроцитов">
+        <input id="Xденьгосп" type="text"placeholder="День госпитализации">
+        <input id="XЧДД" type="text" placeholder="ЧДД">
+        <input id="XЧСС" type="text" placeholder="ЧСС">
+        <input id="Xлейк" type="text" placeholder="Абсолютное кол-во лейкоцитов">
+        <input id="Xтромб" type="text" placeholder="Кол-во тромбоцитов">
+        <input id="Xлимф" type="text"placeholder = 'Относительное кол-во лимфоцитов'>
+        <input id="Xферритин" type="text"placeholder='Ферритин'>
+        <input id="XСр" type="text" placeholder='C-рекактивный белок'>
+        <input id="XDдимер" type="text" placeholder = 'D-димер'>
+        <input id="Xфибрин" type="text" placeholder = "фибриноген">
+        <input id="XКТ" type="text" placeholder="Данные КТ(0-КТ0,1-КТ1,2-КТ2,3-КТ3,4-КТ4)">
+        <div id = "result2">
+            <button id="res2">Посчитать</button>
+        </div>
+        </div>
+    </div>
+</body>
+   <script src="index.js"></script>
+</html>
